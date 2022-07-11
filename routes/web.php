@@ -1,8 +1,9 @@
 <?php
 
 use App\Http\Controllers\TestController;
+use App\Http\Controllers\ContactFormController;
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,4 +24,11 @@ Route::get('/', function () {
 // Route::get('tests/test','App\Http\Controllers\TestController@index');
 //解決策2:：useでコントローラーをインポートする
 Route::get('tests/test',[TestController::class,'index']);
+//REST
+Route::resource('contact', ContactFormController::class)->only([
+    'index', 'show'
+]);
 
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
