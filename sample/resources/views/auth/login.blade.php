@@ -1,4 +1,5 @@
 @extends('layouts.app')
+{{-- layoutsフォルダのapp.blade.phpファイルの読み込み --}}
 
 @section('content')
 <div class="container">

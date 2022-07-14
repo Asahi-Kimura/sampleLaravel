@@ -1,12 +1,13 @@
 <!doctype html>
+{{-- {{}}はphpの関数を使う事が可能 string-replaceで文字を変更  --}}
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSRF Token -->
+    <!-- CSRF Token セキュリティ対策で必須！！ -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    {{--configヘルパ関数で configファイルのapp.phpのnameを持ってくる --}}
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
